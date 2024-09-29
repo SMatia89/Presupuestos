@@ -118,7 +118,7 @@ function exportarPDF() {
     doc.text(`Total: $${total}`, 22, lineHeight);
 
     // Agradecimiento
-    doc.text(`¡Gracias por su compra!`, 85 , 275);
+    doc.text(`¡Gracias por su preferencia!`, 85 , 275);
 
     // Línea en la parte inferior
     doc.setDrawColor(0); // Color de la línea
