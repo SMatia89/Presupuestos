@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">Presupuesto</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" placeholder="Nombre y Apellido" required style="width: auto;">
+            <div id="fecha" style="margin-left: 20px; font-size: 1em;"></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="productTable">
+                <tr>
+                    <td><input type="text" class="producto" placeholder="Nombre del Producto" required></td>
+                    <td><input type="number" min="1" class="cantidad" placeholder="Cantidad" required></td>
+                    <td><input type="number" min="1" class="precio-unitario" placeholder="Precio Unitario" required></td>
+                    <td><input type="number" class="precio" placeholder="Precio Total" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="agregarProducto()">Agregar Producto</button>
+        <div class="totals">
+            <div>
+                <p>Valor de Cuota Ahora 12 - Sin Interés: <span id="cuota12"></span></p>
+                <p>Valor Ahora 18 - 75% de Interés: <span id="cuota18"></span></p>
+            </div>
+        </div>
+        <div class="totals">
+            <div>
+                <p>Subtotal: <span id="subtotal"></span></p>
+                <p>IVA: <span id="iva"></span></p>
+                <p>Total: <span id="total"></span></p>
+            </div>
+        </div>
+        <button onclick="calcularTotal()">Calcular Total</button>
+        <button onclick="imprimirPresupuesto()">Imprimir Presupuesto</button>
+        <button onclick="exportarPDF()">Exportar a PDF</button>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
